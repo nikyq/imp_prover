@@ -40,16 +40,19 @@ class IfStmt:
     condition: Expr
     then_body: List["Stmt"]
     else_body: List["Stmt"]
+    pc: Optional[int] = None
 
 @dataclass(frozen=True)
 class AssignStmt:
     lhs: Variable
     rhs: Expr
+    pc: Optional[int] = None
 
 @dataclass(frozen=True)
 class WhileStmt:
     condition: Expr
     body: List[Any]
-    
-Stmt = Union[IfStmt, AssignStmt]
+    pc: Optional[int] = None
+   
+Stmt = Union[IfStmt, AssignStmt, WhileStmt]
  

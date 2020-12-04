@@ -9,7 +9,6 @@ from parse import *
 @dataclass(frozen=True)
 class ProgramState:
     pc: int
-    state_condition: Expr
     memory: FrozenSet[Tuple[Variable, Expr]]
 
 def convert_state(state: ProgramState) -> Callable[[Z3State], BoolRef]:

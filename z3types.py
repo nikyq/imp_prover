@@ -8,3 +8,4 @@ ArithLike= Union[ArithRef, int]
 
 Z3Variables = FrozenSet[Tuple[Variable, Z3Ref]]
 Z3State = Tuple[Z3Variables, Z3Variables]
+Z3FuncState = Callable[[Z3State], BoolRef]
